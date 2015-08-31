@@ -1,0 +1,42 @@
+{
+  "name": "pong-nite",
+  "version": "0.0.1",
+  "description": "Pong with real time chat.",
+  "main": "index.js",
+  "scripts": {
+    "md": "mkdirp ./public/scripts ./public/styles",
+    "lint:app": "eslint ./app",
+    "lint:server": "eslint ./server",
+    "lint": "npm run lint:app & npm run lint:server",
+    "js": "browserify -d ./app/index.js -t babelify | exorcist ./public/scripts/app.bundle.js.map > ./public/scripts/app.bundle.js",
+    "test": "babel-tape-runner ./app/**/*_tape.js",
+    "start": "babel-node index"
+  },
+  "keywords": [
+    "Pong",
+    "Chat",
+    "Cycle",
+    "FRP"
+  ],
+  "author": "Marco Romero",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "babel-eslint": "^4.1.0",
+    "babel-tape-runner": "^1.2.0",
+    "babelify": "^6.3.0",
+    "browserify": "^11.0.1",
+    "eslint": "^1.3.1",
+    "exorcist": "^0.4.0",
+    "mkdirp": "^0.5.1",
+    "onchange": "^2.0.0",
+    "stylus": "^0.52.0",
+    "tape": "^4.2.0"
+  },
+  "dependencies": {
+    "@cycle/core": "^3.1.0",
+    "@cycle/dom": "^5.1.2",
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  }
+}

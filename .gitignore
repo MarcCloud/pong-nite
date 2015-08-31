@@ -1,0 +1,7 @@
+node_modules
+dist
+www
+public
+coverage
+*.log
+tmp
